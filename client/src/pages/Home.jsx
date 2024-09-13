@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+
+import Layout from "../components/Layout";
+import NewsFeed from "../components/NewsFeed";
 
 function Home() {
   return (
-    <div>Home</div>
-  )
+    <>
+      <Layout>
+        <NewsFeed />
+      </Layout>
+    </>
+  );
 }
 
-export default Home
+export default Home;

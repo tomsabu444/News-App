@@ -1,12 +1,13 @@
 import React from "react";
 import Layout from "../components/Layout";
+import NewsFeed from "../components/NewsFeed";
 
-function About() {
+function NewsPage() {
   return (
     <Layout>
-      <div>about as</div>
+      <NewsFeed />
     </Layout>
   );
 }
 
-export default About;
+export default NewsPage;

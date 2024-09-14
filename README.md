@@ -34,7 +34,7 @@ A news application with a React frontend and an Express backend hosted on Fireba
     For the backend:
 
     ```bash
-    cd ../server/functions
+    cd functions
     npm install
     ```
 
@@ -42,7 +42,7 @@ A news application with a React frontend and an Express backend hosted on Fireba
 
 1. **Set up environment variables**
 
-    Create a `.env` file in the `server/functions` directory with the following content:
+    Create a `.env` file in the `functions` directory with the following content:
 
     ```plaintext
     GNEWS_APIKEY=your_gnews_api_key
@@ -77,10 +77,11 @@ A news application with a React frontend and an Express backend hosted on Fireba
 
 ### Deploying to Firebase
 
+
 1. **Deploy Firebase Functions**
 
     ```bash
-    cd server/functions
+    cd functions
     npm run deploy
     ```
 

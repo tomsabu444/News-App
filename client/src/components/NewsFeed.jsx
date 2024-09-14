@@ -30,7 +30,7 @@ const NewsFeed = ({ country = "us", defaultQuery = "technology" }) => {
   return (
     <div className="news-feed-main">
       <h1 className="feed-page-title">
-        Latest News on {searchQuery && `"${searchQuery}"`.toUpperCase()} from  {selectedCountry.toUpperCase()}
+        Latest News on {searchQuery && `"${searchQuery}"`} from  {selectedCountry.toUpperCase()}
       </h1>
 
       <div className="news-container">

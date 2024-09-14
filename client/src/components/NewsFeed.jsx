@@ -9,11 +9,12 @@ const NewsFeed = ({ country = 'us', defaultQuery = 'technology' }) => {
 
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  const searchQuery = searchParams.get('q') || defaultQuery; // Use query from URL or default
+  const searchQuery = searchParams.get('q') || defaultQuery;  // Use default query if none is provided
+  const selectedCountry = searchParams.get('country') || country;  // Use default country if none is provided
 
   useEffect(() => {
     const fetchNews = async () => {
-      const url = `http://localhost:5273/api/news?q=${searchQuery}&country=${country}&max=${max}&page=${page}`;
+      const url = `http://localhost:5273/api/news?q=${searchQuery}&country=${selectedCountry}&max=${max}&page=${page}`;
 
       try {
         const response = await axios.get(url);
@@ -24,11 +25,11 @@ const NewsFeed = ({ country = 'us', defaultQuery = 'technology' }) => {
     };
 
     fetchNews();
-  }, [searchQuery, country, page, max]);
+  }, [searchQuery, selectedCountry, page, max]);
 
   return (
     <div>
-      <h1>Latest News {searchQuery && `on "${searchQuery}"`} from {country.toUpperCase()}</h1>
+      <h1>Latest News {searchQuery && `on "${searchQuery}"`} from {selectedCountry.toUpperCase()}</h1>
 
       <div className="news-container">
         {articles.map((article, index) => (

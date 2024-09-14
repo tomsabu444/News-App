@@ -1,6 +1,7 @@
 # News App
 
 A news application with a React frontend and an Express backend hosted on Firebase.
+
 ### Screenshot
 
 ![News App Screenshot](screenshot.png)
@@ -64,7 +65,7 @@ A news application with a React frontend and an Express backend hosted on Fireba
 1. **Start the backend**
 
     ```bash
-    cd server/functions
+    cd functions
     npm run start
     ```
 
@@ -75,8 +76,29 @@ A news application with a React frontend and an Express backend hosted on Fireba
     npm start
     ```
 
-### Deploying to Firebase
+3. **Serve locally using Firebase**
 
+    If you'd like to emulate the Firebase environment locally, use the following command to serve both functions and hosting locally:
+
+    ```bash
+    firebase serve
+    ```
+
+    This will run your Firebase functions and serve the frontend via Firebase Hosting on `localhost`.
+
+    Alternatively, if you want to serve specific resources like just functions or hosting, you can use:
+
+    ```bash
+    firebase serve --only functions
+    ```
+
+    or
+
+    ```bash
+    firebase serve --only hosting
+    ```
+
+### Deploying to Firebase
 
 1. **Deploy Firebase Functions**
 
@@ -96,19 +118,16 @@ A news application with a React frontend and an Express backend hosted on Fireba
 
 ### Troubleshooting
 
-- **Failed to load environment variables from `.env`**: Ensure your `.env` file is correctly named and located in the `server/functions` directory.
-
+- **Failed to load environment variables from `.env`**: Ensure your `.env` file is correctly named and located in the `functions` directory.
 - **Invalid config name**: Environment variable names in Firebase must be lowercase and cannot contain underscores or uppercase letters. Update your variable names accordingly.
 
 ### Project Structure
 
 - **`client`**: Contains the React frontend code. Build files are located in `client/dist`.
-- **`server/functions`**: Contains the Express backend code and Firebase Cloud Functions.
+- **`functions`**: Contains the Express backend code and Firebase Cloud Functions.
 
-### License
+<!-- ### License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. -->
 
 ---
-
-Feel free to customize the README further based on additional details or specific instructions relevant to your project.

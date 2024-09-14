@@ -1,25 +1,26 @@
 const express = require("express");
-const cros = require("cors");
+const cors = require("cors");
 require("dotenv").config();
 
-//? Routes
-const news = require("./api/news");
+// Routes
+const newsRoute = require("./api/news");
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000; 
 
-app.use(cros());
+//! Middleware
+app.use(cors());
 app.use(express.json());
 
-//
+
 app.get("/", (req, res) => {
-  res.send("<h2>news app backend is running...</h2>");
+  res.send("<h2>News app backend is running...</h2>");
 });
 
+//! RESTful API route
+app.use("/api", newsRoute);
+
+// Server listener
 app.listen(PORT, () => {
   console.log(`Server running on port http://localhost:${PORT}`);
 });
-
-//! Rest full API
-
-app.use("/api", news);

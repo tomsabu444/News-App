@@ -1,6 +1,9 @@
 # News App
 
 A news application with a React frontend and an Express backend hosted on Firebase.
+### Screenshot
+
+![News App Screenshot](screenshot.png)
 
 ## Project Structure
 

@@ -3,7 +3,7 @@ const axios = require("axios");
 const router = express.Router();
 
 router.get("/news", async (req, res) => {
-  const apiKey = "2b153f670f3e1e16c1c9e014a32b679f"
+  const apiKey = process.env.GNEWS_API_KEY;
   const query = req.query.q || "example";
   const language = req.query.lang || "en";
   const country = req.query.country || "us";

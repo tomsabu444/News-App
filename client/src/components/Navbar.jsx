@@ -1,6 +1,11 @@
 import React, { useState, useRef, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./style/Navbar.css";
+
+//!assets
+import LogoImage from "../assets/news-app-logo.png";
+import SearchIcon from "@mui/icons-material/Search";
+
 const Navbar = () => {
   const [selectedCountry, setSelectedCountry] = useState("us"); // Default country
   const searchRef = useRef(); // Ref for search input
@@ -34,8 +39,10 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-links">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
+        <Link to="/">
+          <img className="title-logo" src={LogoImage} alt="logo image" />
+        </Link>
+        <span className="title-name">New App</span>
       </div>
 
       <form onSubmit={handleSearch} className="search-form">
@@ -45,7 +52,11 @@ const Navbar = () => {
           placeholder="Search news (e.g., GPT, Technology)"
           className="search-input"
         />
-        <button type="submit">Search</button>
+        <button type="submit">
+          <div className="search_icon">
+            <SearchIcon id="search" />
+          </div>
+        </button>
       </form>
 
       <select

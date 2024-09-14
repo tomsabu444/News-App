@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+
+import NewsFeed from "../components/NewsFeed";
 
 function Home() {
   return (
-    <div>Home</div>
-  )
+    <>
+        <NewsFeed />
+    </>
+  );
 }
 
-export default Home
+export default Home;

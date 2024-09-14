@@ -1,4 +1,5 @@
 import React from "react";
+import "./style/Loading.css";
 
 function Loading() {
   return (
@@ -9,4 +10,3 @@ function Loading() {
 }
 
 export default Loading;
-

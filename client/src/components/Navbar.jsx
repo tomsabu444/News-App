@@ -1,24 +1,27 @@
-import React, { useState, useRef, useMemo } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-
+import React, { useState, useRef, useMemo } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./style/Navbar.css";
 const Navbar = () => {
-  const [selectedCountry, setSelectedCountry] = useState('us');  // Default country
-  const searchRef = useRef();  // Ref for search input
+  const [selectedCountry, setSelectedCountry] = useState("us"); // Default country
+  const searchRef = useRef(); // Ref for search input
   const navigate = useNavigate();
 
-  const countries = useMemo(() => [
-    { code: 'us', name: 'United States' },
-    { code: 'in', name: 'India' },
-    { code: 'gb', name: 'United Kingdom' },
-    { code: 'au', name: 'Australia' },
-    { code: 'ca', name: 'Canada' },
-  ], []);
+  const countries = useMemo(
+    () => [
+      { code: "us", name: "United States" },
+      { code: "in", name: "India" },
+      { code: "gb", name: "United Kingdom" },
+      { code: "au", name: "Australia" },
+      { code: "ca", name: "Canada" },
+    ],
+    []
+  );
 
   // Handle search submission
   const handleSearch = (e) => {
     e.preventDefault();
     const query = searchRef.current.value.trim();
-    
+
     if (query) {
       // Navigate to /search route with query and country as URL params
       navigate(`/search?q=${query}&country=${selectedCountry}`);
@@ -45,7 +48,11 @@ const Navbar = () => {
         <button type="submit">Search</button>
       </form>
 
-      <select value={selectedCountry} onChange={(e) => setSelectedCountry(e.target.value)} className="country-select">
+      <select
+        value={selectedCountry}
+        onChange={(e) => setSelectedCountry(e.target.value)}
+        className="country-select"
+      >
         {countries.map((country) => (
           <option key={country.code} value={country.code}>
             {country.name}

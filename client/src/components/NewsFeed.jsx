@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
-
+import './style/NewsFeed.css'
 const NewsFeed = ({ country = "us", defaultQuery = "technology" }) => {
   const [articles, setArticles] = useState([]);
   const [page, setPage] = useState(1); // Track current page
@@ -28,10 +28,9 @@ const NewsFeed = ({ country = "us", defaultQuery = "technology" }) => {
   }, [searchQuery, selectedCountry, page, max]);
 
   return (
-    <div>
-      <h1>
-        Latest News {searchQuery && `on "${searchQuery}"`} from{" "}
-        {selectedCountry.toUpperCase()}
+    <div className="news-feed-main">
+      <h1 className="feed-page-title">
+        Latest News on {searchQuery && `"${searchQuery}"`} from  {selectedCountry.toUpperCase()}
       </h1>
 
       <div className="news-container">

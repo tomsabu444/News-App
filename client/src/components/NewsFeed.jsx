@@ -14,7 +14,7 @@ const NewsFeed = ({ country = "us", defaultQuery = "technology" }) => {
 
   useEffect(() => {
     const fetchNews = async () => {
-      const url = `http://localhost:5273/api/news?q=${searchQuery}&country=${selectedCountry}&max=${max}&page=${page}`;
+      const url = `http://localhost:5001/news-app-a591e/us-central1/app/api/news?q=${searchQuery}&country=${selectedCountry}&max=${max}&page=${page}`;
 
       try {
         const response = await axios.get(url);

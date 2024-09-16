@@ -42,7 +42,7 @@ const Navbar = () => {
         <Link to="/">
           <img className="title-logo" src={LogoImage} alt="logo image" />
         </Link>
-        <span className="title-name">New App</span>
+        <span className="title-name">ACONEWS</span>
       </div>
 
       <form onSubmit={handleSearch} className="search-form">

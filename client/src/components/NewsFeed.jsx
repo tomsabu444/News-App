@@ -20,7 +20,7 @@ const NewsFeed = ({ country = "us", defaultQuery = "technology" }) => {
   useEffect(() => {
     const fetchNews = async () => {
       setLoading(true); // Set loading to true before fetching data
-      const url = `http://localhost:5001/news-app-a591e/us-central1/app/api/news?q=${searchQuery}&country=${selectedCountry}&max=${max}&page=${page}`;
+      const url = `https://us-central1-news-app-a591e.cloudfunctions.net/app/api/news?q=${searchQuery}&country=${selectedCountry}&max=${max}&page=${page}`;
 
       try {
         const response = await axios.get(url);

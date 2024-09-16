@@ -8,9 +8,9 @@ import Loading from './Loading';
 
 const NewsFeed = ({ country = "us", defaultQuery = "technology" }) => {
   const [articles, setArticles] = useState([]);
-  const [page, setPage] = useState(1); // Track current page
-  const [max, setMax] = useState(15); // Results per page
-  const [loading, setLoading] = useState(true); // Track loading state
+  const [page, setPage] = useState(1); 
+  const [max, setMax] = useState(15);
+  const [loading, setLoading] = useState(true); 
 
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
@@ -20,7 +20,7 @@ const NewsFeed = ({ country = "us", defaultQuery = "technology" }) => {
   useEffect(() => {
     const fetchNews = async () => {
       setLoading(true); // Set loading to true before fetching data
-      const url = `http://localhost:5001/news-app-a591e/us-central1/app/api/news?q=${searchQuery}&country=${selectedCountry}&max=${max}&page=${page}`;
+      const url = `https://us-central1-news-app-a591e.cloudfunctions.net/app/api/news?q=${searchQuery}&country=${selectedCountry}&max=${max}&page=${page}`;
 
       try {
         const response = await axios.get(url);
@@ -36,7 +36,7 @@ const NewsFeed = ({ country = "us", defaultQuery = "technology" }) => {
   }, [searchQuery, selectedCountry, page, max]);
 
   if (loading) {
-    return <Loading />; // Display the Loading component while data is being fetched
+    return <Loading />; //? Display the Loading component while data is being fetched
   }
 
   return (

@@ -6,7 +6,7 @@ const app = express();
 
 // Middleware
 const corsOptions = {
-  origin: 'https://news-app-a591e.web.app/'
+  origin: 'https://news-app-a591e.web.app'
 };
 
 app.use(cors(corsOptions));

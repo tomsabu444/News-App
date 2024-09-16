@@ -4,12 +4,16 @@ const cors = require("cors");
 const app = express();
 
 
+// Middleware
+const corsOptions = {
+  origin: 'https://news-app-a591e.web.app/'
+};
+
+app.use(cors(corsOptions));
+app.use(express.json()); // For parsing JSON
+
 // Routes
 const newsRoute = require("./src/api/news");
-
-// Middleware
-app.use(cors());
-app.use(express.json()); // For parsing JSON
 
 // Example route
 app.get("/", (req, res) => {
